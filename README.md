@@ -3,7 +3,8 @@
 # Table of contents
 1. [Introduction](#introduction)
 2. [Files](#files)
-    1. [Sub paragraph](#subparagraph1)
+    1. [Characters](#characters)
+    2. [Books](#books)
 3. [Another paragraph](#paragraph2)
 
 ##  Introduction <a name="introduction"></a>
@@ -12,11 +13,11 @@ This project utilises NLP and network analysis to produce a character relationsh
 
 ## Files <a name="files"></a>
 
-### Character Names
+### Character Names <a name="characters"></a>
 
 This project relies heavily upon the JSON file of character names taken from <a href="https://www.scarymommy.com/lord-of-the-rings-names">here</a>. Although if a better list is available, we should use that list.
 
-### Books
+### Books <a name="books"></a>
 
 The Books folder contains text files of the three books:
 
