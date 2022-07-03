@@ -8,10 +8,11 @@
     1. [Characters](#characters)
     2. [Books](#books)
     3. [Notebook](#notebook)
+    4. [Markdown](#markdown)
 
 ##  Introduction <a name="introduction"></a>
 
-This project utilises NLP and network analysis to produce a character relationship network for the Lord of the Rings book series. This project was inspired by <a href="https://github.com/thu-vu92/the_witcher_network">this repo</a> which conducted this analysis for the characters in the Witcher book series.
+This project utilises NLP and network analysis to produce a character relationship network for the Lord of the Rings book series. This project was inspired by <a href="https://github.com/thu-vu92/the_witcher_network">this repo</a> which conducted a simialr analysis for the characters in the Witcher book series.
 
 ## Files <a name="files"></a>
 
@@ -29,7 +30,12 @@ The Books folder contains text files of the three books:
 
 ### LOTR Network Notebook <a name="notebook"></a>
 
-This is a notebook that conducts all the analysis and produces any plots/data athat will be used later.
+This is a notebook that conducts all the analysis, including the network graphs and centrality data.
+
+### Network Viz Markdown 
+
+The Rmarkdown file is a run-through of how the data visualisations were made. The identically named HTML file is the knitted version of this document.
+
 ![lotr_community](https://user-images.githubusercontent.com/67926222/177049622-abf72109-13ec-4c0c-8dcc-73fa1bffa8cf.png)
 
 
