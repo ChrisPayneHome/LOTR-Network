@@ -7,6 +7,7 @@
 2. [Files](#files)
     1. [Characters](#characters)
     2. [Books](#books)
+    3. [Notebook](#notebook)
 
 ##  Introduction <a name="introduction"></a>
 
