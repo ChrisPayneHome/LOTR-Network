@@ -30,5 +30,6 @@ The Books folder contains text files of the three books:
 ### LOTR Network Notebook <a name="notebook"></a>
 
 This is a notebook that conducts all the analysis and produces any plots/data athat will be used later.
+![lotr_community](https://user-images.githubusercontent.com/67926222/177049622-abf72109-13ec-4c0c-8dcc-73fa1bffa8cf.png)
 
-![lotr_community](https://user-images.githubusercontent.com/67926222/177037456-3648bf70-31b3-4ae4-9a85-b8fde8f18aa1.png)
+
