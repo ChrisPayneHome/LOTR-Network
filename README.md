@@ -16,7 +16,13 @@ This project utilises NLP and network analysis to produce a character relationsh
 
 This project relies heavily upon the JSON file of character names taken from <a href="https://www.scarymommy.com/lord-of-the-rings-names">here</a>. Although if a better list is available, we should use that list.
 
-###
+### Books
+
+The Books folder contains text files of the three books:
+
+ * The Fellowship of the Ring 
+ * The Two Towers 
+ * The Return of the King
 
 ### Sub paragraph <a name="subparagraph1"></a>
 This is a sub paragraph, formatted in heading 3 style
