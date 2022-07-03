@@ -1,4 +1,4 @@
-# LOTR-Network
+# LOTR Character Relationship Network
 
 ![OIP](https://user-images.githubusercontent.com/67926222/177038865-4ed85c58-b5c0-4d6e-bc75-3690becd3faf.jpg)
 
@@ -7,7 +7,6 @@
 2. [Files](#files)
     1. [Characters](#characters)
     2. [Books](#books)
-3. [Another paragraph](#paragraph2)
 
 ##  Introduction <a name="introduction"></a>
 
@@ -27,10 +26,8 @@ The Books folder contains text files of the three books:
  * The Two Towers 
  * The Return of the King
 
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+### LOTR Network Notebook <a name="notebook"></a>
 
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
+This is a notebook that conducts all the analysis and produces any plots/data athat will be used later.
 
 ![lotr_community](https://user-images.githubusercontent.com/67926222/177037456-3648bf70-31b3-4ae4-9a85-b8fde8f18aa1.png)
