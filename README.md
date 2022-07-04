@@ -30,9 +30,9 @@ The Books folder contains text files of the three books:
 
 ### LOTR Network Notebook <a name="notebook"></a>
 
-This is a notebook that conducts all the analysis, including the network graphs and centrality data.
+This is a Jupyter notebook that conducts all the analysis, including generating the network graphs and centrality data.
 
-### Network Viz Markdown 
+### Network Viz Markdown <a name="markdown"></a>
 
 The Rmarkdown file is a run-through of how the data visualisations were made. The identically named HTML file is the knitted version of this document.
 
