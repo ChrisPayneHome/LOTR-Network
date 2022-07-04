@@ -1,0 +1,344 @@
+---
+title: "LOTR Network"
+author: "Christian"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# One Network Visualisation to Rule Them 
+
+## Table of contents
+
+## Description
+
+This Rmarkdown document will detail the process behind the visualisations made from this project. These include
+
+ * Degree centrality for the Two Towers
+ * Betweeness centrality for the Two Towers
+ * Closeness centrality for the Two Towers
+ * Degree centrality for the combined books
+ * Betweeness centrality for the combined books
+ * Closeness centrality for the combined books
+ * Evolution of degree centrality accross the three books
+
+```{r libraries, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(reshape2)
+
+```
+
+## Degree centrality: The Two Towers
+
+For this plot we'll import the data, take the first 10 characters by centrality, and visualise the data in a barplot
+
+```{r dc_tt, echo=TRUE, fig.align='center', message=FALSE, warning=FALSE}
+
+dc_tt <- read_csv('Centrality Measures TT/Centrality.csv') %>%
+  rename(character = ...1) %>%
+  arrange(desc(centrality)) %>%
+  slice_head(n = 10)
+
+tt_centrality <- ggplot(dc_tt, 
+                        aes(x = reorder(character, desc(centrality)), 
+                        y = centrality, 
+                        fill = character)) +
+  
+  geom_bar(stat = "identity") +
+  
+  scale_y_continuous(
+    limits = c(0,0.525),
+    expand = c(0,0)
+  ) +
+  
+  labs(x = NULL, y = "Centrality", title = "Character Importance (The Two Towers): Centrality", subtitle = "Top 10 most important characters in The Two Towers, as measured by degree centrality") +
+  
+  theme_classic() +
+  
+  theme(
+    legend.position = "none", 
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1),
+    panel.grid.minor.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+  )
+  
+ggsave("Images/tt_centality.png", height = 4.47, width = 7.2)
+
+tt_centrality
+  
+```
+
+## Betweenness centrality: The Two Towers
+
+This code will take the top 10 characters by betweenness centrality and visualise those using a bar chart.
+
+```{r bc_tt, echo=TRUE, fig.align='center', message=FALSE, warning=FALSE}
+
+bc_tt <- read_csv('Centrality Measures TT/Betweenness.csv') %>%
+  rename(character = ...1) %>%
+  arrange(desc(centrality)) %>%
+  slice_head(n = 10)
+
+tt_betweenness <- ggplot(bc_tt, 
+                        aes(x = reorder(character, desc(centrality)), 
+                        y = centrality, 
+                        fill = character)) +
+  
+  geom_bar(stat = "identity") +
+  
+  scale_y_continuous(
+    limits = c(0,0.2),
+    expand = c(0,0)
+  ) +
+  
+  labs(x = NULL, y = "Betweenness", title = "Character Importance (The Two Towers): Betweeness", subtitle = "Top 10 most important characters in The Two Towers, as measured by betweenness") +
+  
+  theme_classic() +
+  
+  theme(
+    legend.position = "none", 
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1),
+    panel.grid.minor.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+  )
+  
+ggsave("Images/tt_betweenness.png", height = 4.47, width = 7.2)
+
+tt_betweenness
+
+```
+
+## Closeness centrality: The Two Towers
+
+This code will take the top 10 characters by closeness centrality and visualise those using a bar chart.
+
+```{r cc_tt, echo=TRUE, fig.align='center', message=FALSE, warning=FALSE}
+
+cc_tt <- read_csv('Centrality Measures TT/Closeness.csv') %>%
+  rename(character = ...1) %>%
+  arrange(desc(centrality)) %>%
+  slice_head(n = 10)
+
+tt_closeness <- ggplot(cc_tt, 
+                        aes(x = reorder(character, desc(centrality)), 
+                        y = centrality, 
+                        fill = character)) +
+  
+  geom_bar(stat = "identity") +
+  
+  scale_y_continuous(
+    limits = c(0,0.69),
+    expand = c(0,0)
+  ) +
+  
+  labs(x = NULL, y = "Betweenness", title = "Character Importance (The Two Towers): Closeness", subtitle = "Top 10 most important characters in The Two Towers, as measured by closeness") +
+  
+  theme_classic() +
+  
+  theme(
+    legend.position = "none", 
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1),
+    panel.grid.minor.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+  )
+  
+ggsave("Images/tt_closeness.png", height = 4.47, width = 7.2)
+
+tt_closeness
+
+```
+
+
+## Degree centrality: All Books
+
+Next, we'll apply all of the centrality measures to the relationships from the combined books. Starting with the degree centrality measure.
+
+```{r dc_all, echo=TRUE, fig.align='center', message=FALSE, warning=FALSE}
+
+dc_all <- read_csv('Centrality Measures All/Centrality.csv') %>%
+  rename(character = ...1) %>%
+  arrange(desc(centrality)) %>%
+  slice_head(n = 10)
+
+all_centrality <- ggplot(dc_all, 
+                        aes(x = reorder(character, desc(centrality)), 
+                        y = centrality, 
+                        fill = character)) +
+  
+  geom_bar(stat = "identity") +
+  
+  scale_y_continuous(
+    limits = c(0,0.575),
+    expand = c(0,0)
+  ) +
+  
+  labs(
+    x = NULL, 
+    y = "Centrality", 
+    title = "Character Importance (All Books): Centrality", 
+    subtitle = "Top 10 most important characters in The Lord of the Rings, as measured by degree centrality"
+  ) +
+  
+  theme_classic() +
+  
+  theme(
+    legend.position = "none", 
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1),
+    panel.grid.minor.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+  )
+  
+ggsave("Images/all_centality.png", height = 4.47, width = 7.2)
+
+all_centrality
+  
+```
+
+## Betweenness centrality: All Books
+
+This code will take the top 10 characters by betweenness centrality and visualise those using a bar chart.
+
+```{r bc_all, echo=TRUE, fig.align='center', message=FALSE, warning=FALSE}
+
+bc_all <- read_csv('Centrality Measures All/Betweenness.csv') %>%
+  rename(character = ...1) %>%
+  arrange(desc(centrality)) %>%
+  slice_head(n = 10)
+
+all_betweenness <- ggplot(bc_all, 
+                        aes(x = reorder(character, desc(centrality)), 
+                        y = centrality, 
+                        fill = character)) +
+  
+  geom_bar(stat = "identity") +
+  
+  scale_y_continuous(
+    limits = c(0,0.245),
+    expand = c(0,0)
+  ) +
+  
+  labs(x = NULL, 
+       y = "Betweenness", 
+       title = "Character Importance (All Books): Betweeness", 
+       subtitle = "Top 10 most important characters in The Lord of the Rings, as measured by betweenness"
+  ) +
+  
+  theme_classic() +
+  
+  theme(
+    legend.position = "none", 
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1),
+    panel.grid.minor.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+  )
+  
+ggsave("Images/all_betweenness.png", height = 4.47, width = 7.2)
+
+all_betweenness
+
+```
+
+
+## Closeness centrality: All Books
+
+This code will take the top 10 characters by closeness centrality and visualise those using a bar chart.
+
+```{r cc_all, echo=TRUE, fig.align='center', message=FALSE, warning=FALSE}
+
+cc_all <- read_csv('Centrality Measures All/Closeness.csv') %>%
+  rename(character = ...1) %>%
+  arrange(desc(centrality)) %>%
+  slice_head(n = 10)
+
+all_closeness <- ggplot(cc_all, 
+                        aes(x = reorder(character, desc(centrality)), 
+                        y = centrality, 
+                        fill = character)) +
+  
+  geom_bar(stat = "identity") +
+  
+  scale_y_continuous(
+    limits = c(0,0.69),
+    expand = c(0,0)
+  ) +
+  
+  labs(x = NULL, y = "Betweenness", title = "Character Importance (All Books): Closeness", subtitle = "Top 10 most important characters in The Lord of the Rings, as measured by closeness") +
+  
+  theme_classic() +
+  
+  theme(
+    legend.position = "none", 
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1),
+    panel.grid.minor.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+  )
+  
+ggsave("Images/all_closeness.png", height = 4.47, width = 7.2)
+
+all_closeness
+
+```
+
+
+## Importance over the series
+
+Finally we will visualise the trend in character importance accross the series
+
+```{r importance evol, echo=TRUE, message=FALSE, warning=FALSE}
+
+evol_all <- read_csv('Centrality Measures All/Importance.csv') %>%
+  mutate(Book = c("Fellowship of the Ring", "The Two Towers", "Return of the King")) %>%
+  select(Book, Frodo, Sam, Merry, Pippin, Aragorn, Legolas, Gimli, Gandalf) %>%
+  melt(Value.name = "centrality") %>%
+  rename(character = variable, centrality = value)
+  
+
+evol_plot <- ggplot(evol_all, 
+                    aes(
+                      x = factor(Book, levels = c("Fellowship of the Ring", "The Two Towers", "Return of the King")), 
+                      y = centrality, 
+                      group = character, 
+                      color = character)
+                    ) +
+  
+  scale_x_discrete(expand = c(0.05,0.05)) +
+  
+  #scale_y_continuous(limits = c(0, 0.72)) +
+  
+  geom_line(size = 2) +
+  
+  labs(x = NULL, y = "Centrality", title = "Character Importance by Book", subtitle = "Character importance by book, as measured by centrality", color = "Character") +
+  
+  theme_classic() +
+  
+  theme(
+    
+    panel.grid.major.y = element_line(color = "grey",
+                                          size = 0.1,
+                                          linetype = 1)
+    )
+
+
+ggsave("Images/all_evolve.png", height = 4.47, width = 7.2)
+
+evol_plot
+
+```
