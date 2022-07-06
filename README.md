@@ -20,7 +20,7 @@ This project utilises NLP and network analysis to produce a character relationsh
 
 ### Character Names <a name="characters"></a>
 
-This project relies heavily upon the JSON file of character names taken from <a href="https://www.scarymommy.com/lord-of-the-rings-names">here</a>. Although if a better list is available, we should use that list.
+This project relies heavily upon the JSON file of character names taken from <a href="https://www.scarymommy.com/lord-of-the-rings-names">here</a>. Although if a better list is available, we should use that list. There may also be some work to develop a csv files that contains alternate names.
 
 ### Books <a name="books"></a>
 
@@ -32,7 +32,7 @@ The Books folder contains text files of the three books:
 
 ### LOTR Network Notebook <a name="notebook"></a>
 
-This is a Jupyter notebook that conducts all the analysis, including generating the network graphs and centrality data.
+This is a Jupyter notebook that conducts all the analysis, including generating the network graphs and centrality data. Most of the code foe this project was written here.
 
 ### Network Viz Markdown <a name="markdown"></a>
 
