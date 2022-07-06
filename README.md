@@ -12,7 +12,7 @@
 
 ##  Introduction <a name="introduction"></a>
 
-This project utilises NLP and network analysis to produce a character relationship network for the Lord of the Rings book series. This project was inspired by <a href="https://github.com/thu-vu92/the_witcher_network">this repo</a> which conducted a simialr analysis for the characters in the Witcher book series.
+This project utilises NLP and network analysis to produce a character relationship network for the Lord of the Rings book series. This project was inspired by <a href="https://github.com/thu-vu92/the_witcher_network">this repo</a> which conducted a similar analysis for the characters in the Witcher book series. The article detailing this analysis is posted on my website <a href="https://chrispaynehome.github.io/html/LOTR.html">here</a>.
 
 ![lotr_community](https://user-images.githubusercontent.com/67926222/177049622-abf72109-13ec-4c0c-8dcc-73fa1bffa8cf.png)
 
